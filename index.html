@@ -5,39 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="Style Signature learns your taste in fashion, jewellery, beauty and home as you swipe, then finds things you'll love from UK shops.">
+<meta name="description" content="Style Signature learns your taste in fashion, jewellery, beauty and home as you swipe, then finds things you will love from UK shops.">
 <!-- Awin publisher verification: Awin -->
 <title>Style Signature</title>
 <style>
-  :root { --bg:#f6f1ea; --ink:#1d1a17; --soft:#6b625a; --accent:#b4532a; --card:#fffaf4; --line:#e4d9cc; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#16130f; --ink:#f3ece3; --soft:#b3a89c; --accent:#e08a5f; --card:#201b16; --line:#352d25; } }
+  :root { --bg:#f6f1ea; --ink:#1d1a17; --soft:#6b625a; --accent:#a84a24; --card:#fffaf4; --line:#e4d9cc; --ph1:#e7d8c6; --ph2:#c9b19a; --screen:#fffaf4; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16130f; --ink:#f3ece3; --soft:#b3a89c; --accent:#e08a5f; --card:#201b16; --line:#352d25; --ph1:#3a3026; --ph2:#5a4a3a; --screen:#201b16; } }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 Georgia, "Times New Roman", serif; }
-  main { max-width:640px; margin:0 auto; padding:72px 20px 48px; }
-  .eyebrow { font:600 12px/1 -apple-system, "Segoe UI", sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
-  h1 { font-size:clamp(40px, 9vw, 64px); line-height:1.02; margin:14px 0 18px; font-weight:400; letter-spacing:-.02em; }
-  p.lead { font-size:20px; color:var(--soft); margin:0 0 36px; }
-  ul { list-style:none; padding:0; margin:0 0 36px; display:grid; gap:12px; }
-  li { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
-  li b { display:block; font:600 15px/1.3 -apple-system, "Segoe UI", sans-serif; margin-bottom:4px; }
-  li span { color:var(--soft); font-size:16px; }
-  .soon { display:inline-block; font:600 14px/1 -apple-system, "Segoe UI", sans-serif; padding:10px 16px; border-radius:999px; border:1px solid var(--accent); color:var(--accent); }
-  footer { margin-top:56px; font:13px/1.5 -apple-system, "Segoe UI", sans-serif; color:var(--soft); }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 Georgia, "Times New Roman", serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+  nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font:600 14px/1.2 -apple-system, "Segoe UI", sans-serif; }
+  nav .brand { font:400 20px/1.2 Georgia, serif; color:var(--ink); text-decoration:none; }
+  nav .links { display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end; }
+  nav .links a { text-decoration:none; color:var(--soft); }
+  .eyebrow { font:600 12px/1.2 -apple-system, "Segoe UI", sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+  h1 { font-size:clamp(40px, 9vw, 68px); line-height:1.04; margin:14px 0 18px; font-weight:400; letter-spacing:-.02em; }
+  h2 { font-size:clamp(28px, 6vw, 38px); line-height:1.15; margin:10px 0 14px; font-weight:400; letter-spacing:-.01em; }
+  h3 { font:600 16px/1.3 -apple-system, "Segoe UI", sans-serif; margin:0 0 6px; }
+  p { margin:0 0 14px; }
+  .lead { font-size:21px; color:var(--soft); max-width:36em; }
+  section { padding:44px 0; border-top:1px solid var(--line); }
+  .hero { padding:44px 0 56px; border-top:0; }
+  .pill { display:inline-block; font:600 14px/1.2 -apple-system, "Segoe UI", sans-serif; padding:10px 16px; border-radius:999px; border:1px solid var(--accent); color:var(--accent); }
+  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); margin-top:22px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card p { margin:0; color:var(--soft); font-size:16px; }
+  .num { font:400 26px/1 Georgia, serif; color:var(--accent); margin-bottom:10px; }
+  .phones { display:grid; gap:24px; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); justify-items:center; margin-top:26px; }
+  figure { margin:0; width:210px; max-width:100%; }
+  figcaption { font:13px/1.45 -apple-system, "Segoe UI", sans-serif; color:var(--soft); margin-top:12px; text-align:center; }
+  .phone { height:400px; border:7px solid var(--ink); border-radius:30px; background:var(--screen); padding:18px 14px; display:flex; flex-direction:column; gap:10px; overflow:hidden; font-family:-apple-system, "Segoe UI", sans-serif; }
+  .ph { background:linear-gradient(150deg, var(--ph1), var(--ph2)); border-radius:12px; }
+  .big { flex:1; display:flex; align-items:flex-end; padding:12px; font-size:12px; color:var(--ink); }
+  .row { display:flex; gap:10px; align-items:center; font-size:12px; }
+  .row .ph { width:46px; height:46px; flex:none; }
+  .row small { display:block; color:var(--soft); font-size:11px; }
+  .btns { display:flex; justify-content:center; gap:14px; }
+  .btn { width:40px; height:40px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:18px; }
+  .sig { font:400 26px/1.15 Georgia, serif; }
+  .tag { font-size:11px; color:var(--soft); }
+  .bar { height:7px; border-radius:7px; background:var(--line); overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  ul.plain { padding:0; margin:18px 0 0; list-style:none; display:grid; gap:10px; }
+  ul.plain li { padding-left:22px; position:relative; }
+  ul.plain li::before { content:"–"; position:absolute; left:0; color:var(--accent); }
+  footer { border-top:1px solid var(--line); padding:26px 0 44px; font:13px/1.55 -apple-system, "Segoe UI", sans-serif; color:var(--soft); }
 </style>
 </head>
 <body>
-<main>
-  <div class="eyebrow">Coming soon</div>
-  <h1>Style Signature</h1>
-  <p class="lead">Swipe through things you like. We learn your taste and find pieces you'll love from UK shops.</p>
-  <ul>
-    <li><b>Fashion and jewellery</b><span>Clothes, shoes, bags and jewellery picked for your style, from high street to designer, new or pre-loved.</span></li>
-    <li><b>Beauty</b><span>Make-up and skincare in shades that suit you.</span></li>
-    <li><b>Home</b><span>Furniture and décor for the rooms you love, styled within your budget.</span></li>
-    <li><b>Gifts that land</b><span>Share your list so friends and family know exactly what you'd like.</span></li>
+<div class="wrap">
+<nav><a class="brand" href="index.html">Style Signature</a><span class="links"><a href="index.html#how">How it works</a><a href="index.html#shops">For shops</a><a href="privacy.html">Privacy</a></span></nav>
+<div class="hero">
+  <div class="eyebrow">Coming soon to the UK</div>
+  <h1>Shopping that knows your taste</h1>
+  <p class="lead">Swipe through things you like. Style Signature learns what suits you, then finds pieces you'll love from the shops you already buy from.</p>
+  <span class="pill">In private testing before launch</span>
+</div>
+
+<section id="how">
+  <div class="eyebrow">How it works</div>
+  <h2>A few swipes in, it starts to feel like yours</h2>
+  <div class="grid">
+    <div class="card"><div class="num">1</div><h3>Swipe</h3><p>Right for yes, left for no. Choose what you care about, from clothes and jewellery to beauty and home.</p></div>
+    <div class="card"><div class="num">2</div><h3>Get your Style Signature</h3><p>The app sums up your taste and keeps learning as you go.</p></div>
+    <div class="card"><div class="num">3</div><h3>Find things you'll love</h3><p>Personal picks, outfit and room ideas, and price drops, with a link straight to the shop.</p></div>
+    <div class="card"><div class="num">4</div><h3>Share your list</h3><p>Send friends and family a list of what you'd really like, so gifts land.</p></div>
+  </div>
+  <div class="phones" aria-label="Illustrations of the app">
+    <figure><div class="phone"><div class="tag">Your picks</div><div class="ph big">Example product photo</div><div class="row"><span><b>Brand name</b><small>From shop name · £00</small></span></div><div class="btns"><span class="btn">✕</span><span class="btn">♥</span></div></div><figcaption>Swipe through products chosen for you</figcaption></figure>
+    <figure><div class="phone"><div class="tag">Your Style Signature</div><div class="sig">Your style, in a few words</div><div class="ph" style="height:96px"></div><div class="tag">Wardrobe</div><div class="bar"><i style="width:82%"></i></div><div class="tag">Jewellery</div><div class="bar"><i style="width:64%"></i></div><div class="tag">Beauty</div><div class="bar"><i style="width:48%"></i></div><div class="tag">Home</div><div class="bar"><i style="width:71%"></i></div></div><figcaption>See your taste, area by area</figcaption></figure>
+    <figure><div class="phone"><div class="tag">Gift list</div><div class="sig" style="font-size:22px">What I'd love</div><div class="row"><div class="ph"></div><span><b>Brand name</b><small>Shop name · £00</small></span></div><div class="row"><div class="ph"></div><span><b>Brand name</b><small>Shop name · £00</small></span></div><div class="row"><div class="ph"></div><span><b>Brand name</b><small>Shop name · £00</small></span></div><div class="row"><div class="ph"></div><span><b>Brand name</b><small>Shop name · £00</small></span></div></div><figcaption>Share a list that gets gifts right</figcaption></figure>
+  </div>
+  <p class="tag" style="text-align:center;margin-top:18px">Illustrations with placeholder products.</p>
+</section>
+
+<section id="shops">
+  <div class="eyebrow">For shops and brands</div>
+  <h2>How your products would appear</h2>
+  <p class="lead">We put products in front of people whose taste they suit, and send them to your site to buy.</p>
+  <ul class="plain">
+    <li>Each product shows its brand, your shop name, the current price and a direct link to your site.</li>
+    <li>Products appear in personal picks, outfit and room ideas, and gift lists.</li>
+    <li>People buy on your site. We don't handle orders.</li>
+    <li>No voucher codes or cashback.</li>
+    <li>We don't bid on your brand name in search ads.</li>
+    <li>Style Signature is in private testing, so its audience is small for now.</li>
   </ul>
-  <span class="soon">In private testing, launching in the UK</span>
-  <footer>Style Signature may earn a small commission when you buy through links to partner shops, at no extra cost to you. This page uses no cookies and collects no data.</footer>
-</main>
+</section>
+
+<section>
+  <div class="eyebrow">About</div>
+  <h2>Who's behind it</h2>
+  <p>Style Signature is an independent UK app run by Tok Charles. It's being built and tested privately ahead of a UK launch.</p>
+</section>
+<footer>Style Signature is run by Tok Charles in the UK. Style Signature may earn a small commission when you buy through links to partner shops, at no extra cost to you. Brand names belong to their owners.</footer>
+</div>
 </body>
 </html>
